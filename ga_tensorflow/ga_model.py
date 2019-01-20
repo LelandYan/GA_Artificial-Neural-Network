@@ -4,10 +4,11 @@ __date__ = '2018/11/17 23:02'
 
 import numpy as np
 import pandas as pd
-import model
+from ga_tensorflow.model import *
+from ga_tensorflow.svm_model import *
 
 # the path and name of file
-CSV_FILE_PATH = 'parkinsons.csv'
+CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
 # read the file
 df = pd.read_csv(CSV_FILE_PATH)
 shapes = df.values.shape
@@ -18,8 +19,8 @@ result = df.values[:, shapes[1] - 1:shapes[1]]
 # the length of eigenvalue
 value_len = input_data.shape[1]
 # the length of result
-pop_len = 10
-# pop_len = result.shape[0]
+# pop_len = 10
+pop_len = result.shape[0]
 # DNA length
 DNA_SIZE = value_len
 # population size
@@ -29,7 +30,7 @@ CROSS_RATE = 0.8
 # mutation probability
 MUTATION_RATE = 0.003
 # the times of generations
-N_GENERATIONS = 50
+N_GENERATIONS = 100
 
 
 # find non-zero fitness for selection
@@ -105,8 +106,6 @@ def mutate(child):
     return child
 
 
-
-
 # initialize the pop DNA
 pop = np.zeros((POP_SIZE, DNA_SIZE))
 pop = np.full(pop.shape, 0)
@@ -115,11 +114,10 @@ count = 1
 # pick up the 20 points from DNA
 for i in range(len(pop)):
     for j in range(len(pop[i])):
-        if count <= 1000:
-            if np.random.rand() < 0.5:
+        if count < int(0.005 * DNA_SIZE):
+            if np.random.rand() < 0.9:
                 pop[i][j] = 1
                 count += 1
-print(pop)
 # the training of ga
 for _ in range(N_GENERATIONS):
     accuracy_list = []
@@ -128,7 +126,9 @@ for _ in range(N_GENERATIONS):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[0])
-        accuracy_list.append(model.Neural_Network().__int__(data, result)[0])
+
+        accuracy_list.append(svm_model(data, result))
+        # accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
