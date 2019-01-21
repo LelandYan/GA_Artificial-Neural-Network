@@ -19,8 +19,8 @@ result = df.values[:, shapes[1] - 1:shapes[1]]
 # the length of eigenvalue
 value_len = input_data.shape[1]
 # the length of result
-# pop_len = 10
-pop_len = result.shape[0]
+pop_len = 20
+# pop_len = result.shape[0]
 # DNA length
 DNA_SIZE = value_len
 # population size
@@ -30,7 +30,7 @@ CROSS_RATE = 0.8
 # mutation probability
 MUTATION_RATE = 0.003
 # the times of generations
-N_GENERATIONS = 100
+N_GENERATIONS = 10000
 
 
 # find non-zero fitness for selection
@@ -98,7 +98,7 @@ def crossover(parent, pop):
     return parent
 
 
-# genovariation
+# generation
 def mutate(child):
     for point in range(DNA_SIZE):
         if np.random.rand() < MUTATION_RATE:
@@ -107,17 +107,18 @@ def mutate(child):
 
 
 # initialize the pop DNA
-pop = np.zeros((POP_SIZE, DNA_SIZE))
-pop = np.full(pop.shape, 0)
+# pop = np.zeros((POP_SIZE, DNA_SIZE))
+pop = np.eye(POP_SIZE,DNA_SIZE)
 count = 1
 
-# pick up the 20 points from DNA
+# init DNA
 for i in range(len(pop)):
     for j in range(len(pop[i])):
-        if count < int(0.005 * DNA_SIZE):
+        if count < int(0.005 * DNA_SIZE * pop_len):
             if np.random.rand() < 0.9:
                 pop[i][j] = 1
                 count += 1
+print(pop)
 # the training of ga
 for _ in range(N_GENERATIONS):
     accuracy_list = []
@@ -126,14 +127,13 @@ for _ in range(N_GENERATIONS):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[0])
-
         accuracy_list.append(svm_model(data, result))
         # accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
     print("accuracy: ", np.max(accuracy_list), " features: ", features[np.argmax(accuracy_list)])
-    pop = select_gamble(pop, fitness)
+    pop = select(pop, fitness)
     pop_copy = pop.copy()
     for parent in pop:
         child = crossover(parent, pop_copy)
