@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from ga_tensorflow.model import *
 from ga_tensorflow.svm_model import *
-
+from ga_tensorflow.RandomForest_model import *
 # the path and name of file
 CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
 # read the file
@@ -127,13 +127,14 @@ for _ in range(N_GENERATIONS):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[0])
-        accuracy_list.append(svm_model(data, result))
+        accuracy_list.append(RandomForest_model(data, result))
+        #accuracy_list.append(svm_model(data, result))
         # accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
     print("accuracy: ", np.max(accuracy_list), " features: ", features[np.argmax(accuracy_list)])
-    pop = select(pop, fitness)
+    pop = select_gamble(pop, fitness)
     pop_copy = pop.copy()
     for parent in pop:
         child = crossover(parent, pop_copy)

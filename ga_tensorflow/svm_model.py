@@ -13,11 +13,11 @@ def svm_model(data, result):
     clf = SVC()
     clf.fit(train_x, train_y)
     #expected = test_y
-    #predicted = clf.predict(test_x)
+    predicted = clf.predict(test_x)
     # y_hat = clf.predict(x_train)
     #print(clf.score(x_test, y_test))
     # return np.abs(np.average(expected - predicted))
-    return clf.score(test_x,test_y)
+    return metrics.accuracy_score(test_y, predicted)
 
 if __name__ == '__main__':
     CSV_FILE_PATH = 'parkinsons.csv'
