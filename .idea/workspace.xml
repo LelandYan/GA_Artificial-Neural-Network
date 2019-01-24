@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5633122-0a10-425d-978d-3fce7a6f9a35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ga_tensorflow/GetMaxValue1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ga_tensorflow/knn_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ga_tensorflow/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ga_tensorflow/ga_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_tensorflow/ga_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ga_tensorflow/svm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_tensorflow/svm_model.py" afterDir="false" />
     </list>
@@ -13,62 +16,80 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$ga_model.coverage" NAME="ga_model Coverage Results" MODIFIED="1548033774049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
-    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$RandomForest_model.coverage" NAME="RandomForest_model Coverage Results" MODIFIED="1548033763631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
-    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$svm_model.coverage" NAME="svm_model Coverage Results" MODIFIED="1548033768410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
-    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$bp_model.coverage" NAME="bp_model Coverage Results" MODIFIED="1548033799002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$ga_model.coverage" NAME="ga_model Coverage Results" MODIFIED="1548316425006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$svm_model.coverage" NAME="svm_model Coverage Results" MODIFIED="1548033959020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$RandomForest_model.coverage" NAME="RandomForest_model Coverage Results" MODIFIED="1548033972674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$test.coverage" NAME="test Coverage Results" MODIFIED="1548314847532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$bp_model.coverage" NAME="bp_model Coverage Results" MODIFIED="1548033810493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$GetMaxValue1.coverage" NAME="GetMaxValue1 Coverage Results" MODIFIED="1548299843883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1328360454">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="1" />
-          <entry key="py" value="11" />
+          <entry key="csv" value="2" />
+          <entry key="py" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSV" value="1" />
-          <entry key="Python" value="11" />
+          <entry key="CSV" value="2" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="750" />
+          <entry key="py" value="3371" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="750" />
+          <entry key="Python" value="3371" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ga_tensorflow/ga_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+            <state relative-caret-position="200">
+              <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
               <folding>
                 <element signature="e#80#98#0" expanded="true" />
+                <element signature="e#954#965#0" />
+                <element signature="e#1059#1183#0" />
+                <element signature="e#1251#1370#0" />
+                <element signature="e#1429#2729#0" />
+                <element signature="e#2484#2836#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga_tensorflow/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ga_tensorflow/bp_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+            <state relative-caret-position="30">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#79#102#0" expanded="true" />
               </folding>
@@ -77,22 +98,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py">
+        <entry file="file://$PROJECT_DIR$/ga_tensorflow/knn_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-              <folding>
-                <element signature="e#78#97#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ga_tensorflow/svm_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+            <state relative-caret-position="330">
+              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
                 <element signature="e#78#97#0" expanded="true" />
               </folding>
@@ -116,9 +125,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ga_tensorflow/bp_model.py" />
-        <option value="$PROJECT_DIR$/ga_tensorflow/ga_model.py" />
         <option value="$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py" />
         <option value="$PROJECT_DIR$/ga_tensorflow/svm_model.py" />
+        <option value="$PROJECT_DIR$/ga_tensorflow/GetMaxValue1.py" />
+        <option value="$PROJECT_DIR$/ga_tensorflow/knn_model.py" />
+        <option value="$PROJECT_DIR$/ga_tensorflow/test.py" />
+        <option value="$PROJECT_DIR$/ga_tensorflow/ga_model.py" />
       </list>
     </option>
   </component>
@@ -128,11 +140,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="186" />
-    <option name="y" value="122" />
-    <option name="width" value="1563" />
-    <option name="height" value="1055" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="725" />
+    <option name="y" value="93" />
+    <option name="width" value="1943" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -148,11 +160,6 @@
             <path>
               <item name="GA_Artificial-Neural-Network" type="b2602c69:ProjectViewProjectNode" />
               <item name="GA_Artificial-Neural-Network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GA_Artificial-Neural-Network" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA_Artificial-Neural-Network" type="462c0819:PsiDirectoryNode" />
-              <item name="ga_tensorflow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -179,7 +186,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.bp_model">
+  <component name="RunManager" selected="Python.ga_model">
+    <configuration name="GetMaxValue1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GA_Artificial-Neural-Network" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ga_tensorflow" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ga_tensorflow/GetMaxValue1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RandomForest_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GA_Artificial-Neural-Network" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,28 +223,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="bp_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GA_Artificial-Neural-Network" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ga_tensorflow" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ga_tensorflow/bp_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -268,18 +275,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GA_Artificial-Neural-Network" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ga_tensorflow" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ga_tensorflow/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.ga_model" />
       <item itemvalue="Python.svm_model" />
-      <item itemvalue="Python.bp_model" />
       <item itemvalue="Python.RandomForest_model" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.GetMaxValue1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bp_model" />
         <item itemvalue="Python.ga_model" />
-        <item itemvalue="Python.svm_model" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.GetMaxValue1" />
         <item itemvalue="Python.RandomForest_model" />
+        <item itemvalue="Python.svm_model" />
       </list>
     </recent_temporary>
   </component>
@@ -297,30 +328,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="98" width="1250" height="844" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1476" height="878" extended-state="7" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2021812" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49798387" visible="true" weight="0.20098731" />
+      <window_info id="Structure" order="1" sideWeight="0.5020161" side_tool="true" weight="0.20120321" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47679326" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5033557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,9 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga_tensorflow/csv_result-ALL-AML_train.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
     <entry file="file://E:/anaconda/Lib/site-packages/numpy/lib/twodim_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -354,16 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga_tensorflow/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1648">
-          <caret line="55" lean-forward="true" selection-start-line="4" selection-end-line="55" />
-          <folding>
-            <element signature="e#80#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/anaconda/Lib/site-packages/sklearn/ensemble/forest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -371,42 +388,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga_tensorflow/ga_model.py">
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/csv_result-ALL-AML_train.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-223" />
+      </provider>
+    </entry>
+    <entry file="file://E:/anaconda/Lib/site-packages/h5py/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+        <state relative-caret-position="145">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/anaconda/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="850" column="4" selection-start-line="850" selection-start-column="4" selection-end-line="850" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/GetMaxValue1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
           <folding>
-            <element signature="e#80#98#0" expanded="true" />
+            <element signature="e#78#97#0" expanded="true" />
+            <marker date="1548299857193" expanded="true" signature="989:1198" ph="..." />
+            <marker date="1548299857193" expanded="true" signature="1431:1436" ph="..." />
+            <marker date="1548299857193" expanded="true" signature="1661:1666" ph="..." />
+            <marker date="1548299857193" expanded="true" signature="1844:1849" ph="..." />
+            <marker date="1548299857193" expanded="true" signature="2568:2569" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga_tensorflow/bp_model.py">
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+        <state relative-caret-position="559">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
           <folding>
-            <element signature="e#79#102#0" expanded="true" />
+            <element signature="e#80#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ga_tensorflow/RandomForest_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        <state relative-caret-position="30">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/svm_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="18" />
           <folding>
             <element signature="e#78#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga_tensorflow/svm_model.py">
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/knn_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        <state relative-caret-position="330">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="e#78#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/ga_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
+          <folding>
+            <element signature="e#80#98#0" expanded="true" />
+            <element signature="e#954#965#0" />
+            <element signature="e#1059#1183#0" />
+            <element signature="e#1251#1370#0" />
+            <element signature="e#1429#2729#0" />
+            <element signature="e#2484#2836#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga_tensorflow/bp_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#79#102#0" expanded="true" />
           </folding>
         </state>
       </provider>

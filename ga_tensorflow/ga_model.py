@@ -7,6 +7,8 @@ import pandas as pd
 from ga_tensorflow.model import *
 from ga_tensorflow.svm_model import *
 from ga_tensorflow.RandomForest_model import *
+from ga_tensorflow.knn_model import *
+
 # the path and name of file
 CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
 # read the file
@@ -19,8 +21,8 @@ result = df.values[:, shapes[1] - 1:shapes[1]]
 # the length of eigenvalue
 value_len = input_data.shape[1]
 # the length of result
-pop_len = 20
-# pop_len = result.shape[0]
+# pop_len = 20
+pop_len = result.shape[0]
 # DNA length
 DNA_SIZE = value_len
 # population size
@@ -28,9 +30,9 @@ POP_SIZE = pop_len
 # mating probability(DNA crossover)
 CROSS_RATE = 0.8
 # mutation probability
-MUTATION_RATE = 0.003
+MUTATION_RATE = 0.005  # 0.02 0.006 0.005
 # the times of generations
-N_GENERATIONS = 10000
+N_GENERATIONS = 40
 
 
 # find non-zero fitness for selection
@@ -76,11 +78,26 @@ def select_gamble(pop, fitness):
             if float(accumulation[j]) >= p:
                 roulette_index.append(j)
                 break
+    roulette_dict = {}
+    for i in range(len(roulette_index)):
+        value = roulette_dict.get(roulette_index[i], 0)
+        value += 1
+        roulette_dict[roulette_index[i]] = value
+    # print(roulette_dict)
+    roulette_dict = sorted(roulette_dict.items(), key=lambda x: x[1], reverse=True)
+    best_index = []
+    # print(roulette_dict[0][0])
+    for one in roulette_dict:
+        best_index.append(one[0])
     new_pop = []
     new_fitness = []
-    for i in roulette_index:
-        new_pop.append(sorted_pop[i])
-        new_fitness.append(sorted_fitness[i])
+    for i in range(len(pop)):
+        if i not in best_index:
+            new_pop.append(sorted_pop[best_index[0]])
+            new_fitness.append(sorted_fitness[best_index[0]])
+        else:
+            new_pop.append(sorted_pop[i])
+            new_fitness.append(sorted_fitness[i])
 
     new_pop = np.array(new_pop)
     return new_pop
@@ -100,25 +117,26 @@ def crossover(parent, pop):
 
 # generation
 def mutate(child):
-    for point in range(DNA_SIZE):
+    for i in range(int(DNA_SIZE/POP_SIZE*0.1)):
+        rand_index = np.random.randint(DNA_SIZE)
         if np.random.rand() < MUTATION_RATE:
-            child[point] = 1 if child[point] == 0 else 0
+            child[rand_index] = 1 if child[rand_index] == 0 else 0
     return child
 
 
 # initialize the pop DNA
 # pop = np.zeros((POP_SIZE, DNA_SIZE))
-pop = np.eye(POP_SIZE,DNA_SIZE)
-count = 1
+pop = np.zeros((POP_SIZE, DNA_SIZE))
+# count = 1
 
 # init DNA
 for i in range(len(pop)):
     for j in range(len(pop[i])):
-        if count < int(0.005 * DNA_SIZE * pop_len):
-            if np.random.rand() < 0.9:
-                pop[i][j] = 1
-                count += 1
-print(pop)
+        # if count < int(0.005 * DNA_SIZE):
+        if np.random.rand() < 0.002:
+            pop[i][j] = 1
+            # count += 1
+# print(pop)
 # the training of ga
 for _ in range(N_GENERATIONS):
     accuracy_list = []
@@ -126,17 +144,26 @@ for _ in range(N_GENERATIONS):
     for i in range(POP_SIZE):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
-        feature_list.append(np.sum(pop, axis=1)[0])
-        accuracy_list.append(RandomForest_model(data, result))
-        #accuracy_list.append(svm_model(data, result))
-        # accuracy_list.append(Neural_Network().__int__(data, result)[0])
+        feature_list.append(np.sum(pop, axis=1)[i])
+        #accuracy_list.append(RandomForest_model(data, result))
+        #accuracy_list.append(knn_model(data, result) * 0.8 + 0.2 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(svm_model(data, result)*0.7+0.3*(1-np.sum(pop, axis=1)[i]/DNA_SIZE))
+        accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
-    print("accuracy: ", np.max(accuracy_list), " features: ", features[np.argmax(accuracy_list)])
+    best_features = features[np.argmax(accuracy_list)]
+    best_accuracy = (np.max(accuracy_list) - 0.2 * (1 - best_features / DNA_SIZE))/0.8
+    print("accuracy: ",best_accuracy, " features: ",best_features )
     pop = select_gamble(pop, fitness)
+    # print(pop.sum(axis=1))
     pop_copy = pop.copy()
+    #print("the old value",pop.sum(axis=1))
     for parent in pop:
         child = crossover(parent, pop_copy)
         child = mutate(child)
+        #print(parent[:].shape)
         parent[:] = child
+    #print("the new value",pop.sum(axis=1))
+    # print(accuracy_list)
+    # print(feature_list)
