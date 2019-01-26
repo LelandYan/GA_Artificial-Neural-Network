@@ -4,11 +4,16 @@ __date__ = '2018/11/17 23:02'
 
 import numpy as np
 import pandas as pd
-from ga_tensorflow.model import *
 from ga_tensorflow.Classifier_model.svm_model import *
 from ga_tensorflow.Classifier_model.RandomForest_model import *
 from ga_tensorflow.Classifier_model.knn_model import *
-
+from ga_tensorflow.Classifier_model.Quadratic_Discriminant_Analysis_model import *
+from ga_tensorflow.Classifier_model.Multinomial_Native_bayes_Classifier import *
+from ga_tensorflow.Classifier_model.logistic_regression_model import *
+from ga_tensorflow.Classifier_model.Linaer_Discriminant_Analysis import *
+from ga_tensorflow.Classifier_model.GaussianNB_model import *
+from ga_tensorflow.Classifier_model.GBDT_model import *
+from ga_tensorflow.Classifier_model.AdaBoost_model import *
 # the path and name of file
 CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
 # read the file
@@ -145,9 +150,10 @@ for _ in range(N_GENERATIONS):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[i])
-        accuracy_list.append(RandomForest_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(RandomForest_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
         #accuracy_list.append(knn_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
         #accuracy_list.append(svm_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        accuracy_list.append(QuadraticDiscriminantAnalysis_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
         #accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
