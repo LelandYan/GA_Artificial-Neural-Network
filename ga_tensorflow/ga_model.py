@@ -5,9 +5,9 @@ __date__ = '2018/11/17 23:02'
 import numpy as np
 import pandas as pd
 from ga_tensorflow.model import *
-from ga_tensorflow.svm_model import *
-from ga_tensorflow.RandomForest_model import *
-from ga_tensorflow.knn_model import *
+from ga_tensorflow.Classifier_model.svm_model import *
+from ga_tensorflow.Classifier_model.RandomForest_model import *
+from ga_tensorflow.Classifier_model.knn_model import *
 
 # the path and name of file
 CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
@@ -32,7 +32,7 @@ CROSS_RATE = 0.8
 # mutation probability
 MUTATION_RATE = 0.005  # 0.02 0.006 0.005
 # the times of generations
-N_GENERATIONS = 40
+N_GENERATIONS = 300
 
 
 # find non-zero fitness for selection
@@ -117,7 +117,7 @@ def crossover(parent, pop):
 
 # generation
 def mutate(child):
-    for i in range(int(DNA_SIZE/POP_SIZE*0.1)):
+    for i in range(int(DNA_SIZE/POP_SIZE*0.01)):
         rand_index = np.random.randint(DNA_SIZE)
         if np.random.rand() < MUTATION_RATE:
             child[rand_index] = 1 if child[rand_index] == 0 else 0
@@ -145,15 +145,15 @@ for _ in range(N_GENERATIONS):
         data = input_data[:, translateDNA(pop[i])]
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[i])
-        #accuracy_list.append(RandomForest_model(data, result))
-        #accuracy_list.append(knn_model(data, result) * 0.8 + 0.2 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
-        #accuracy_list.append(svm_model(data, result)*0.7+0.3*(1-np.sum(pop, axis=1)[i]/DNA_SIZE))
-        accuracy_list.append(Neural_Network().__int__(data, result)[0])
+        accuracy_list.append(RandomForest_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(knn_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(svm_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
     best_features = features[np.argmax(accuracy_list)]
-    best_accuracy = (np.max(accuracy_list) - 0.2 * (1 - best_features / DNA_SIZE))/0.8
+    best_accuracy = (np.max(accuracy_list) - 0.01 * (1 - best_features / DNA_SIZE))/0.99
     print("accuracy: ",best_accuracy, " features: ",best_features )
     pop = select_gamble(pop, fitness)
     # print(pop.sum(axis=1))
