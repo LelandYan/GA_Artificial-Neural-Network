@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5633122-0a10-425d-978d-3fce7a6f9a35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_feature_search/Classifer_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_feature_search/Classifer_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_feature_search/GA_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_feature_search/GA_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GA_feature_search/GA_result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_feature_search/GA_result.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +21,7 @@
     <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$test.coverage" NAME="test Coverage Results" MODIFIED="1548314847532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
     <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$bp_model.coverage" NAME="bp_model Coverage Results" MODIFIED="1548033810493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
     <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$GetMaxValue1.coverage" NAME="GetMaxValue1 Coverage Results" MODIFIED="1548299843883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_tensorflow" />
-    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$GA_model.coverage" NAME="GA_model Coverage Results" MODIFIED="1551407423766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GA_feature_search" />
+    <SUITE FILE_PATH="coverage/GA_Artificial_Neural_Network$GA_model.coverage" NAME="GA_model Coverage Results" MODIFIED="1551409243791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GA_feature_search" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1328360454">
@@ -36,54 +38,76 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="4" />
-          <entry key="py" value="53" />
-          <entry key="txt" value="2" />
+          <entry key="py" value="54" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSV" value="4" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="53" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Python" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="5098" />
+          <entry key="py" value="5215" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="5098" />
+          <entry key="Python" value="5215" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="145" column="51" lean-forward="true" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
               <folding>
                 <element signature="e#76#94#0" expanded="true" />
-                <marker date="1551407201951" expanded="true" signature="166:171" ph="..." />
-                <marker date="1551407201951" expanded="true" signature="3598:3604" ph="..." />
+                <marker date="1551409243777" expanded="true" signature="166:171" ph="..." />
+                <marker date="1551409243777" expanded="true" signature="648:766" ph="..." />
+                <marker date="1551409243777" expanded="true" signature="3828:3834" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_result.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GA_feature_search/Classifer_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="238">
+              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding>
                 <element signature="e#78#128#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GA_feature_search/load_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding>
+                <marker date="1551403023065" expanded="true" signature="155:156" ph="..." />
               </folding>
             </state>
           </provider>
@@ -133,11 +157,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1859" />
-    <option name="height" value="1098" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1975" />
+    <option name="y" value="38" />
+    <option name="width" value="1190" />
+    <option name="height" value="702" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -336,15 +360,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1487" height="878" extended-state="6" />
+    <frame x="1912" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49234137" weight="0.12316305" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49234137" weight="0.12275064" />
       <window_info id="Structure" order="1" sideWeight="0.50765866" side_tool="true" weight="0.19244227" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3489933" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3616734" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -475,16 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GA_feature_search/load_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <marker date="1551403023065" expanded="true" signature="155:156" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ga_tensorflow/Classifier_model/AdaBoost_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -597,9 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_result.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://E:/anaconda/Lib/site-packages/sklearn/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -614,18 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
-          <folding>
-            <element signature="e#76#94#0" expanded="true" />
-            <marker date="1551407201951" expanded="true" signature="166:171" ph="..." />
-            <marker date="1551407201951" expanded="true" signature="3598:3604" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1980697110/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -633,12 +632,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GA_feature_search/load_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <marker date="1551403023065" expanded="true" signature="155:156" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GA_feature_search/Classifer_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="238">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="e#78#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA_feature_search/GA_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="145" column="51" lean-forward="true" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
+          <folding>
+            <element signature="e#76#94#0" expanded="true" />
+            <marker date="1551409243777" expanded="true" signature="166:171" ph="..." />
+            <marker date="1551409243777" expanded="true" signature="648:766" ph="..." />
+            <marker date="1551409243777" expanded="true" signature="3828:3834" ph="..." />
           </folding>
         </state>
       </provider>

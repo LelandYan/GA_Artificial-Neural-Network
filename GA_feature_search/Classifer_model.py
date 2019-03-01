@@ -15,7 +15,7 @@ from sklearn import metrics
 
 
 def Classifer_model(data, result,model):
-    train_x, test_x, train_y, test_y = train_test_split(data, result, test_size=0.3)
+    train_x, test_x, train_y, test_y = train_test_split(data, result, test_size=0.3,random_state=0)
     clf = model()
     try:
         clf.fit(train_x, train_y.flatten())

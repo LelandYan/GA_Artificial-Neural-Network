@@ -7,14 +7,18 @@ from Classifer_model import *
 
 
 class GA_model:
-    def __init__(self, CROSS_RATE, MUTATION_RATE, N_GENERATIONS):
+    def __init__(self, CROSS_RATE, MUTATION_RATE, N_GENERATIONS,fitness):
         self.CROSS_RATE = CROSS_RATE
         self.MUTATION_RATE = MUTATION_RATE
         self.N_GENERATIONS = N_GENERATIONS
+        self.fitness = fitness
 
     # find non-zero fitness for selection
     def get_fitness(self, accuracy, i):
-        return accuracy * 0.99 + 0.01 * (1 - np.sum(self.pop_, axis=1)[i] / self.DNA_SIZE_)
+        return accuracy * self.fitness + (1-self.fitness) * (1 - np.sum(self.pop_, axis=1)[i] / self.DNA_SIZE_)
+
+    def get_accuracy(self, accuracy_list, best_features):
+        return (np.max(accuracy_list) - (1-self.fitness) * (1 - best_features / self.DNA_SIZE_)) / self.fitness
 
     # convert binary DNA to decimal
     def translateDNA(self, pop):
@@ -96,7 +100,7 @@ class GA_model:
                 child[rand_index] = 1 if child[rand_index] == 0 else 0
         return child
 
-    def search(self, input_data, label,model):
+    def search(self, input_data, label, model):
         np.random.seed(6)
         self.DNA_SIZE_ = input_data.shape[1]
         self.POP_SIZE_ = label.shape[0]
@@ -115,12 +119,12 @@ class GA_model:
             for i in range(self.POP_SIZE_):
                 data = input_data[:, self.translateDNA(self.pop_[i])]
                 feature_list.append(np.sum(self.pop_, axis=1)[i])
-                accuracy_list.append(self.get_fitness(Classifer_model(data, label,model),i))
+                accuracy_list.append(self.get_fitness(Classifer_model(data, label, model), i))
             # GA part(evolution)
             fitness = np.array(accuracy_list)
             features = np.array(feature_list)
             best_features = features[np.argmax(accuracy_list)]
-            best_accuracy = (np.max(accuracy_list) - 0.01 * (1 - best_features / self.DNA_SIZE_)) / 0.99
+            best_accuracy = self.get_accuracy(accuracy_list,best_features)
             accuracy_gen.append(best_accuracy)
             features_gen.append(best_features)
             pop = self.select_gamble(self.pop_, fitness)
@@ -131,17 +135,19 @@ class GA_model:
                 parent[:] = child
         accuracy = np.max(accuracy_gen)
         features = features_gen[np.argsort(accuracy_gen)[-1]]
-        return accuracy,features
+        return accuracy, features
 
 
 if __name__ == '__main__':
     data, label = load_data("csv_result-colonTumor.csv")
-    model = GA_model(CROSS_RATE=0.8, MUTATION_RATE=0.005, N_GENERATIONS=300)
-    classifier_model = [KNeighborsClassifier, GaussianNB, SVC, RandomForestClassifier, LogisticRegression,DecisionTreeClassifier]
+    model = GA_model(CROSS_RATE=0.8, MUTATION_RATE=0.005, N_GENERATIONS=200,fitness=0.99)
+    classifier_model = [KNeighborsClassifier, GaussianNB, SVC, RandomForestClassifier, LogisticRegression,
+                        DecisionTreeClassifier]
     # accuracy, features = model.search(data, label, KNeighborsClassifier)
     # print(accuracy,features)
     # classifier_model = [KNeighborsClassifier]
-    with open("GA_result.txt",'w') as f:
+    with open("GA_result.txt", 'w') as f:
         for classifer in classifier_model:
-            accuracy,features = model.search(data, label,classifer)
-            f.write(str(DecisionTreeClassifier).split('.')[-1].split("'")[0]+" accuracy:"+str(accuracy)+" features:"+str(features)+"\n")
+            accuracy, features = model.search(data, label, classifer)
+            f.write(str(classifer).split('.')[-1].split("'")[0] + " accuracy:" + str(accuracy) + " features:" + str(
+                features) + "\n")
