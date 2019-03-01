@@ -1,0 +1,6 @@
+KNeighborsClassifier accuracy:0.8947368421052632 features:3.0
+GaussianNB accuracy:1.0 features:4.0
+SVC accuracy:0.7894736842105263 features:1.0
+RandomForestClassifier accuracy:0.8947368421052632 features:4.0
+LogisticRegression accuracy:0.9473684210526315 features:3.0
+DecisionTreeClassifier accuracy:0.8421052631578947 features:4.0
