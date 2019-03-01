@@ -137,11 +137,11 @@ class GA_model:
 if __name__ == '__main__':
     data, label = load_data("csv_result-colonTumor.csv")
     model = GA_model(CROSS_RATE=0.8, MUTATION_RATE=0.005, N_GENERATIONS=300)
-    classifier_model = [KNeighborsClassifier, GaussianNB, SVC, RandomForestClassifier, LogisticRegression]
+    classifier_model = [KNeighborsClassifier, GaussianNB, SVC, RandomForestClassifier, LogisticRegression,DecisionTreeClassifier]
     # accuracy, features = model.search(data, label, KNeighborsClassifier)
     # print(accuracy,features)
     # classifier_model = [KNeighborsClassifier]
     with open("GA_result.txt",'w') as f:
         for classifer in classifier_model:
             accuracy,features = model.search(data, label,classifer)
-            f.write(str(classifer)+" accuracy:"+str(accuracy)+" features:"+str(features)+"\n")
+            f.write(str(DecisionTreeClassifier).split('.')[-1].split("'")[0]+" accuracy:"+str(accuracy)+" features:"+str(features)+"\n")

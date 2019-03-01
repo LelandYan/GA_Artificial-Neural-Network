@@ -22,3 +22,5 @@ def Classifer_model(data, result,model):
         return clf.score(test_x,test_y)
     except Exception:
         return 0
+
+
