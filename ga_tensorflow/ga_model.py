@@ -15,7 +15,8 @@ from ga_tensorflow.Classifier_model.GaussianNB_model import *
 from ga_tensorflow.Classifier_model.GBDT_model import *
 from ga_tensorflow.Classifier_model.AdaBoost_model import *
 # the path and name of file
-CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
+# CSV_FILE_PATH = 'csv_result-ALL-AML_train.csv'
+CSV_FILE_PATH = 'csv_result-colonTumor.csv'
 # read the file
 df = pd.read_csv(CSV_FILE_PATH)
 shapes = df.values.shape
@@ -143,6 +144,8 @@ for i in range(len(pop)):
             # count += 1
 # print(pop)
 # the training of ga
+accuracy_gen = []
+features_gen = []
 for _ in range(N_GENERATIONS):
     accuracy_list = []
     feature_list = []
@@ -151,16 +154,18 @@ for _ in range(N_GENERATIONS):
         # data = data[:, pop[i]]
         feature_list.append(np.sum(pop, axis=1)[i])
         #accuracy_list.append(RandomForest_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
-        #accuracy_list.append(knn_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        accuracy_list.append(knn_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
         #accuracy_list.append(svm_model(data, result)* 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
-        accuracy_list.append(QuadraticDiscriminantAnalysis_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
+        #accuracy_list.append(QuadraticDiscriminantAnalysis_model(data, result) * 0.99 + 0.01 * (1 - np.sum(pop, axis=1)[i] / DNA_SIZE))
         #accuracy_list.append(Neural_Network().__int__(data, result)[0])
     # GA part(evolution)
     fitness = np.array(accuracy_list)
     features = np.array(feature_list)
     best_features = features[np.argmax(accuracy_list)]
     best_accuracy = (np.max(accuracy_list) - 0.01 * (1 - best_features / DNA_SIZE))/0.99
-    print("accuracy: ",best_accuracy, " features: ",best_features )
+    accuracy_gen.append(best_accuracy)
+    features_gen.append(best_features)
+    # print("accuracy: ",best_accuracy, " features: ",best_features )
     pop = select_gamble(pop, fitness)
     # print(pop.sum(axis=1))
     pop_copy = pop.copy()
@@ -173,3 +178,7 @@ for _ in range(N_GENERATIONS):
     #print("the new value",pop.sum(axis=1))
     # print(accuracy_list)
     # print(feature_list)
+
+np.savetxt("",np.max(accuracy_gen))
+print(np.max(accuracy_gen))
+print(features_gen[np.argsort(accuracy_gen)[-1]])
